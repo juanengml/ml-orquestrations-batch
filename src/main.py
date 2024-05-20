@@ -100,7 +100,7 @@ register_pipeline(
 )
 
 register_pipeline(
-    id="lights_off",
+    id="job_automation_turn_off",
     description="Turn off the lights at 07:00 AM every day",
     tasks=[job_automation_turn_off],
     triggers=[
