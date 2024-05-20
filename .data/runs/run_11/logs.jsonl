@@ -1,0 +1,4 @@
+{"level": "INFO", "message": "Executing pipeline `job_submit_extract_address_data` #11 via trigger `_manual`", "loggerName": "plombery.11", "timestamp": "2024-05-20T00:19:26.379Z", "pipeline": "job_submit_extract_address_data", "task": null}
+{"level": "INFO", "message": "Executing task job_submit_extract_address_data", "loggerName": "plombery.11", "timestamp": "2024-05-20T00:19:26.380Z", "pipeline": "job_submit_extract_address_data", "task": null}
+{"level": "DEBUG", "message": "Fetching address data...", "loggerName": "plombery.11-job_submit_extract_address_data", "timestamp": "2024-05-20T00:19:26.392Z", "pipeline": "job_submit_extract_address_data", "task": "job_submit_extract_address_data"}
+{"level": "INFO", "message": "Fetched 100 sales data rows", "loggerName": "plombery.11-job_submit_extract_address_data", "timestamp": "2024-05-20T00:19:27.872Z", "pipeline": "job_submit_extract_address_data", "task": "job_submit_extract_address_data"}

@@ -1,0 +1,4 @@
+{"level": "INFO", "message": "Executing pipeline `job_submit_extract_beer_data` #12 via trigger `_manual`", "loggerName": "plombery.12", "timestamp": "2024-05-20T00:19:29.236Z", "pipeline": "job_submit_extract_beer_data", "task": null}
+{"level": "INFO", "message": "Executing task job_submit_extract_beer_data", "loggerName": "plombery.12", "timestamp": "2024-05-20T00:19:29.236Z", "pipeline": "job_submit_extract_beer_data", "task": null}
+{"level": "DEBUG", "message": "Fetching beer data...", "loggerName": "plombery.12-job_submit_extract_beer_data", "timestamp": "2024-05-20T00:19:29.238Z", "pipeline": "job_submit_extract_beer_data", "task": "job_submit_extract_beer_data"}
+{"level": "INFO", "message": "Fetched 100 berr data rows", "loggerName": "plombery.12-job_submit_extract_beer_data", "timestamp": "2024-05-20T00:19:29.950Z", "pipeline": "job_submit_extract_beer_data", "task": "job_submit_extract_beer_data"}
