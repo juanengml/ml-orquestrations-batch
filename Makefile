@@ -2,7 +2,7 @@
 IMAGE_NAME=ml-orquestrations-batch
 
 # Caminho completo do volume
-HOST_VOLUME_PATH=/home/gaspar/Modelos/ml-orquestrations-batch/plombery.db
+HOST_VOLUME_PATH=$(PWD)/plombery.db
 CONTAINER_VOLUME_PATH=/app/plombery.db
 
 # Target para construir a imagem Docker
