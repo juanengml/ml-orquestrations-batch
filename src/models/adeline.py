@@ -1,6 +1,6 @@
-import math
 import random
 from plombery import get_logger
+
 # Função de ativação (linear)
 def activation_function(x):
     return x
@@ -12,7 +12,7 @@ def predict(inputs, weights, bias):
 
 # Função de treino
 def train(training_data, weights, bias, learning_rate, epochs):
-    for epoch in range(epochs):
+    for _ in range(epochs):
         for inputs, target in training_data:
             prediction = predict(inputs, weights, bias)
             error = target - prediction

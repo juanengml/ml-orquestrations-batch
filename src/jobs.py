@@ -1,6 +1,23 @@
 from plombery import task, get_logger
 from requests import get
 from models.adeline import runner
+from automation.area_externa import lights_off, lights_on
+
+@task
+def job_automation_turn_on():
+    logger = get_logger()
+    logger.debug("Fetching light on data...")
+    status = lights_on()
+    logger.info("Fetched %s inference data rows", len(status))
+    return status
+
+@task
+def job_automation_turn_off():
+    logger = get_logger()
+    logger.debug("Fetching light off data...")
+    status = lights_off()
+    logger.info("Fetched %s inference data rows", len(status))
+    return status
 
 @task
 def job_submit_ml_adeline():
