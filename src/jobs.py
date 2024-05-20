@@ -1,14 +1,21 @@
 from plombery import task, get_logger
 from requests import get
-from time import sleep
+from models.adeline import runner
+
+@task
+def job_submit_ml_adeline():
+    logger = get_logger()
+    logger.debug("Fetching inference data...")
+    inference = runner()
+    logger.info("Fetched %s inference data rows", len(inference))
+
+    return inference
+
 
 @task
 def job_submit_extract_address_data():
     """Fetch latest 50 sales of the day"""
     endpoint = "https://random-data-api.com/api/address/random_address?size=100"
-
-
-
     logger = get_logger()
 
     logger.debug("Fetching address data...")
