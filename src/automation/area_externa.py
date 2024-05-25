@@ -8,6 +8,7 @@ def lights_on():
     endpoints = [
         {"id": 1, "name": "Luz da Rede", "url": "http://192.168.0.28/led/1/on"},
         {"id": 2, "name": "Luz do Quartinho", "url": "http://192.168.0.28/led/2/on"},
+        {"id": 3, "name": "Luiz da Garragem e Corredor", "url": "http://192.168.0.58/update?relay=2&state=1"}
     ]
     status = []
 
@@ -40,6 +41,7 @@ def lights_off():
     endpoints = [
         {"id": 1, "name": "Luz da Rede", "url": "http://192.168.0.28/led/1/off"},
         {"id": 2, "name": "Luz do Quartinho", "url": "http://192.168.0.28/led/2/off"},
+        {"id": 3, "name": "Luiz da Garragem e Corredor", "url": "http://192.168.0.58/update?relay=2&state=0"}
     ]
     status = []
 
@@ -65,3 +67,5 @@ def lights_off():
 
     logger.info("Fetched %s lights status rows", len(status))
     return status
+
+
