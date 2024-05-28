@@ -2,6 +2,17 @@ from plombery import task, get_logger
 from requests import get
 from models.adeline import runner
 from automation.area_externa import lights_off, lights_on
+from automation.area_interna import lights_off_office_one, lights_on_office_one
+
+@task
+def job_automation_turn_off_office_one():
+    status = lights_off_office_one()
+    return status
+
+@task
+def job_automation_turn_on_office_one():
+    status = lights_on_office_one()
+    return status
 
 @task
 def job_automation_turn_on():
