@@ -1,0 +1,28 @@
+---
+- name: Deploy ML Orquestrations Batch
+  hosts: verde001
+  tasks:
+    - name: Clonar repositório
+      git:
+        repo: https://github.com/juanengml/ml-orquestrations-batch.git
+        dest: /home/verde001/ml-orquestrations-batch
+        force: yes
+        clone: yes
+
+    - name: Entrar no diretório do repositório
+      shell: cd /home/verde001/ml-orquestrations-batch
+
+    - name: Limpar ambiente
+      shell: make clean
+      args:
+        chdir: /home/verde001/ml-orquestrations-batch
+
+    - name: Construir o projeto
+      shell: make build
+      args:
+        chdir: /home/verde001/ml-orquestrations-batch
+
+    - name: Executar o deploy
+      shell: make run
+      args:
+        chdir: /home/verde001/ml-orquestrations-batch

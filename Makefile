@@ -5,6 +5,9 @@ IMAGE_NAME=ml-orquestrations-batch
 HOST_VOLUME_PATH=$(PWD)/plombery.db
 CONTAINER_VOLUME_PATH=/app/plombery.db
 
+
+deploy:
+	ansible-playbook -i deployment/inventario.yaml deployment/deploy.yaml
 # Target para construir a imagem Docker
 build: ## Constrói a imagem Docker
 	docker build -t $(IMAGE_NAME) .
