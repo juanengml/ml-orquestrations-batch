@@ -1,4 +1,4 @@
-from src.automation.services import control_light
+from automation.services import control_light
 
 def lights_on_luz_rede():
     endpoint = {"id": 1, "name": "Luz da Rede", "url": "http://192.168.0.28/led/1/on"}

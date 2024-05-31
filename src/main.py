@@ -54,14 +54,14 @@ register_pipeline(
             id="daily_evening",
             name="Daily Evening",
             description="Run the pipeline every day at 17:30",
-            schedule=CronTrigger(hour=8, minute=30),
+            schedule=CronTrigger(hour=17, minute=30),
         ),
     ],
 )
 
 register_pipeline(
     id="job_automation_turn_off_luz_rede",
-    description="Turn on the lights at 17:30",
+    description="Turn on the lights at 8:30",
     tasks=[job_automation_turn_off_luz_rede],
     triggers=[
         Trigger(

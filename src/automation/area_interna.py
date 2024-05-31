@@ -1,4 +1,4 @@
-from src.automation.services import control_light
+from automation.services import control_light
 
 
 def lights_on_office_one():
