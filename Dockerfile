@@ -19,7 +19,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY src/ src/
 
 # Copie o arquivo plumbery.db para o diretório de trabalho
-# COPY plombery.db .
+COPY plombery.db .
 
 # Defina o comando padrão para executar a aplicação
 CMD ["python", "src/main.py"]
