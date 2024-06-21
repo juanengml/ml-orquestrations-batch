@@ -14,7 +14,7 @@ build: ## Constrói a imagem Docker
 
 # Target para rodar o contêiner Docker
 run: ## Executa o contêiner Docker em segundo plano
-	docker run -d -p 8001:8001 -v $(HOST_VOLUME_PATH):$(CONTAINER_VOLUME_PATH) --name $(IMAGE_NAME)_container $(IMAGE_NAME)
+	docker run -d -p 8001:8001 --restart always -v $(HOST_VOLUME_PATH):$(CONTAINER_VOLUME_PATH) --name $(IMAGE_NAME)_container $(IMAGE_NAME)
 
 # Target para parar o contêiner Docker
 stop: ## Para e remove o contêiner Docker
