@@ -1,0 +1,4 @@
+{"level": "INFO", "message": "Executing pipeline `job_automation_turn_on_office_one` #75 via trigger `_manual`", "loggerName": "plombery.75", "timestamp": "2024-08-10T22:35:13.951Z", "pipeline": "job_automation_turn_on_office_one", "task": null}
+{"level": "INFO", "message": "Executing task job_automation_turn_on_office_one", "loggerName": "plombery.75", "timestamp": "2024-08-10T22:35:13.952Z", "pipeline": "job_automation_turn_on_office_one", "task": null}
+{"level": "DEBUG", "message": "[Lights Luz Escritorio 1]...", "loggerName": "plombery.75-job_automation_turn_on_office_one", "timestamp": "2024-08-10T22:35:13.953Z", "pipeline": "job_automation_turn_on_office_one", "task": "job_automation_turn_on_office_one"}
+{"level": "INFO", "message": "Fetched 1 lights status rows", "loggerName": "plombery.75-job_automation_turn_on_office_one", "timestamp": "2024-08-10T22:35:14.440Z", "pipeline": "job_automation_turn_on_office_one", "task": "job_automation_turn_on_office_one"}

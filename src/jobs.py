@@ -11,6 +11,7 @@ from automation.area_externa import lights_off_luz_garagem
 from automation.area_interna import lights_on_office_one
 from automation.area_interna import lights_off_office_one
 
+
 @task
 def job_automation_turn_off_office_one():
     status = lights_off_office_one()

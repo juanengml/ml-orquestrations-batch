@@ -14,7 +14,6 @@ from apscheduler.triggers.cron import CronTrigger
 
 
 
-
 register_pipeline(
     id="job_automation_turn_on_luz_quartinho",
     description="Turn on the lights at 08:30",
