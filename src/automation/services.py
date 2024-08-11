@@ -12,17 +12,23 @@ from notifications.alerts import Success, Warning
 import random
 
 # Lista de URLs de imagens de gatos
-cat_images = [
-    "https://rlv.zcache.com.br/cartao_postal_gato_chefe_na_gravata-r75b6de6a8e74403891ea299e60aa9921_ucbjp_644.webp",
-    "https://i.pinimg.com/736x/5a/be/e1/5abee1475c587252ef681cfc05ebf59b.jpg",
-    "https://www.tediado.com.br/wp-content/uploads/2019/09/gatos-com-gravatas-11.jpg",
-    "https://cdn.bhdw.net/im/black-cat-with-a-tie-and-a-cup-of-coffee-wallpaper-96403_w635.webp",
-    "https://cdn.pixabay.com/photo/2024/01/07/16/52/ai-generated-8493598_1280.png",
-    "https://thumbs.dreamstime.com/b/la-ilustraci%C3%B3n-del-traje-gato-cyberpunk-es-un-s%C3%ADmbolo-de-rebeli%C3%B3n-y-el-estilo-tecnolog%C3%ADa-esta-muestra-una-imagen-fresca-fresco-269540889.jpg"
+CAT_IMAGES = [
+    "https://i.pinimg.com/originals/1c/39/80/1c39807dd3b3ab9a8a9db0f8ec25e3cd.jpg",
+    "https://cdn.shopify.com/s/files/1/0264/0841/9946/products/MrFormal_CatTieBowtieCollectionBowTie_Collar_1800x1800.jpg?v=1622744651",
+    "https://image.shutterstock.com/image-photo/cat-bow-tie-glasses-sitting-260nw-1201700011.jpg",
+    "https://i.pinimg.com/originals/69/6d/2f/696d2f556f8d6a7cbdad7a333b19b79e.jpg",
+    "https://image.shutterstock.com/image-photo/cute-kitten-wearing-tie-hat-260nw-1305460549.jpg",
+    "https://i.pinimg.com/736x/6b/f0/25/6bf025eb28e519087b1491fc9c285702.jpg",
+    "https://i.pinimg.com/originals/88/28/26/8828261b09f1e71c715b8de5d3a485c1.jpg",
+    "https://i.pinimg.com/originals/5a/1a/d3/5a1ad34b4b629b0fa967f751f7f43713.jpg",
+    "https://www.catdumb.com/wp-content/uploads/2018/02/cat-necktie-featured.jpg",
+    "https://media.gettyimages.com/photos/cat-dressed-with-a-tie-and-spectacles-picture-id470789472"
 ]
 
 # URL da imagem de falha (meme)
-failure_image_url = "https://www.dictionary.com/e/wp-content/uploads/2018/03/This-is-Fine-300x300.jpg"
+FAILURE_IMAGE_URL = "https://www.dictionary.com/e/wp-content/uploads/2018/03/This-is-Fine-300x300.jpg"
+
+
 
 
 
