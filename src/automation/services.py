@@ -24,63 +24,67 @@ cat_images = [
 # URL da imagem de falha (meme)
 failure_image_url = "https://www.dictionary.com/e/wp-content/uploads/2018/03/This-is-Fine-300x300.jpg"
 
+
+
+def determine_action(url):
+    """Determina a ação (Ligada/Desligada) com base no parâmetro `state` na URL."""
+    if 'state=1' in url:
+        return 'Ligada'
+    elif 'state=0' in url:
+        return 'Desligada'
+    return 'Indefinida'
+
+
+def send_alert(title, message, success=True):
+    """Envia um alerta com base no sucesso ou falha da operação."""
+    image_url = random.choice(CAT_IMAGES) if success else FAILURE_IMAGE_URL
+    alert_class = Success if success else Warning
+    alert_class().send(
+        title=title,
+        message=message,
+        image_url=image_url,
+        service_name="Home Automation",
+        pipeline_name="Light Control Pipeline"
+    )
+
+
+def log_and_append_status(status_list, endpoint, status_message, response=None, error=None):
+    """Registra no log e adiciona o status da operação à lista de status."""
+    logger = get_logger()
+    logger.info("Fetched %s lights status rows", len(status_list))
+
+    status_list.append({
+        "id": endpoint["id"],
+        "endpoint": endpoint["url"],
+        "date": datetime.now(),
+        "status": status_message,
+        "response": response if response else str(error)
+    })
+
+
+
 def control_light(endpoint):
     logger = get_logger()
     status = []
 
     logger.debug(f"[Lights {endpoint['name']}]...")
 
-    try:
-        response = requests.get(endpoint["url"]).text
-        action = 'Ligada' if 'on' in endpoint['url'] else 'Desligada'
+    response = fetch_light_status(endpoint)
+    if response:
+        action = determine_action(endpoint["url"])
         status_message = f"{endpoint['name']} {action}"
 
-        # Seleciona uma imagem aleatória da lista de gatos para sucesso
-        image_url = random.choice(cat_images)
-
         # Enviar alerta de sucesso
-        Success().send(
-            title="Light Control Success",
-            message=status_message,
-            image_url=image_url,
-            service_name="Home Automation",
-            pipeline_name="Light Control Pipeline"
-        )
-
-        status.append({
-            "id": endpoint["id"],
-            "endpoint": endpoint["url"],
-            "date": datetime.now(),
-            "status": status_message,
-            "response": response
-        })
-
-    except Exception as e:
+        send_alert("Light Control Success", status_message, success=True)
+    else:
+        action = determine_action(endpoint["url"])
         status_message = f"{endpoint['name']} Falha ao {action}"
 
-        # Usar a imagem de falha (meme)
-        image_url = failure_image_url
+        # Enviar alerta de falha
+        send_alert("Light Control Failure", status_message, success=False)
 
-        # Enviar alerta de aviso
-        Warning().send(
-            title="Light Control Failure",
-            message=status_message,
-            image_url=image_url,
-            service_name="Home Automation",
-            pipeline_name="Light Control Pipeline"
-        )
-
-        status.append({
-            "id": endpoint["id"],
-            "endpoint": endpoint["url"],
-            "date": datetime.now(),
-            "status": status_message,
-            "response": str(e)
-        })
-
-    logger.info("Fetched %s lights status rows", len(status))
+    log_and_append_status(status, endpoint, status_message, response=response)
     return status
-
 
 
 def check_mac_address(mac_address, network_range="192.168.1.0/24"):

@@ -9,7 +9,7 @@ def lights_on_luz_quartinho():
     return control_light(endpoint)
 
 def lights_on_luz_garagem():
-    endpoint = {"id": 3, "name": "Luiz da Garagem e Corredor", "url": "http://192.168.0.58/update?relay=2&state=1"}
+    endpoint = {"id": 3, "name": "Luz da Garagem e Corredor", "url": "http://192.168.0.58/update?relay=2&state=1"}
     return control_light(endpoint)
 
 def lights_off_luz_rede():
@@ -21,5 +21,5 @@ def lights_off_luz_quartinho():
     return control_light(endpoint)
 
 def lights_off_luz_garagem():
-    endpoint = {"id": 3, "name": "Luiz da Garagem e Corredor", "url": "http://192.168.0.58/update?relay=2&state=0"}
+    endpoint = {"id": 3, "name": "Luz da Garagem e Corredor", "url": "http://192.168.0.58/update?relay=2&state=0"}
     return control_light(endpoint)
