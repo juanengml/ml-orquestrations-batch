@@ -26,6 +26,8 @@ failure_image_url = "https://www.dictionary.com/e/wp-content/uploads/2018/03/Thi
 
 
 
+
+
 def determine_action(url):
     """Determina a ação (Ligada/Desligada) com base no parâmetro `state` na URL."""
     if 'state=1' in url:
@@ -48,7 +50,7 @@ def send_alert(title, message, success=True):
     )
 
 
-def log_and_append_status(status_list, endpoint, status_message, response=None, error=None):
+def log_and_append_status(status_list, endpoint, status_message, response=None):
     """Registra no log e adiciona o status da operação à lista de status."""
     logger = get_logger()
     logger.info("Fetched %s lights status rows", len(status_list))
@@ -58,9 +60,19 @@ def log_and_append_status(status_list, endpoint, status_message, response=None, 
         "endpoint": endpoint["url"],
         "date": datetime.now(),
         "status": status_message,
-        "response": response if response else str(error)
+        "response": response if response else "Failed to fetch response"
     })
 
+
+def fetch_light_status(endpoint):
+    """Tenta obter o status da luz via HTTP e retorna o resultado ou None se falhar."""
+    try:
+        response = requests.get(endpoint["url"], timeout=5)
+        if response.status_code == 200:
+            return response.text
+        return None
+    except requests.RequestException:
+        return None
 
 
 def control_light(endpoint):
@@ -85,7 +97,6 @@ def control_light(endpoint):
 
     log_and_append_status(status, endpoint, status_message, response=response)
     return status
-
 
 def check_mac_address(mac_address, network_range="192.168.1.0/24"):
     logger = get_logger()
