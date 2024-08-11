@@ -1,11 +1,10 @@
 import requests
-import os
 
 
 class Alert:
     def __init__(self):
         
-        self.webhook_url = os.getenv('WEBHOOK_URL')
+        self.webhook_url = "https://discord.com/api/webhooks/1038861068291801088/c_voU-YUPqlDmbpz64s2nyqgVqW9zXqmzTU6dGvKPyplZKKYDv2K3iHQ7MfhUlHpTqaA"
 
     def send_alert(self, title, message, image_url, service_name, pipeline_name, alert_type):
         color_map = {

@@ -1,6 +1,6 @@
 all:
   hosts:
-    verde001:
+    verde003:
       ansible_host: 192.168.0.12
       ansible_ssh_user: verde001
       ansible_ssh_pass: verderoot
