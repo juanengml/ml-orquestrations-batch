@@ -1,4 +1,0 @@
-{"level": "INFO", "message": "Executing pipeline `job_submit_extract_company_data` #6 via trigger `_manual`", "loggerName": "plombery.6", "timestamp": "2024-05-20T00:18:12.762Z", "pipeline": "job_submit_extract_company_data", "task": null}
-{"level": "INFO", "message": "Executing task job_submit_extract_company_data", "loggerName": "plombery.6", "timestamp": "2024-05-20T00:18:12.763Z", "pipeline": "job_submit_extract_company_data", "task": null}
-{"level": "DEBUG", "message": "Fetching beer data...", "loggerName": "plombery.6-job_submit_extract_company_data", "timestamp": "2024-05-20T00:18:12.765Z", "pipeline": "job_submit_extract_company_data", "task": "job_submit_extract_company_data"}
-{"level": "INFO", "message": "Fetched 100 berr data rows", "loggerName": "plombery.6-job_submit_extract_company_data", "timestamp": "2024-05-20T00:18:14.042Z", "pipeline": "job_submit_extract_company_data", "task": "job_submit_extract_company_data"}
