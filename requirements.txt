@@ -1,3 +1,4 @@
 plombery
 requests
 scapy==2.5.0      # Biblioteca para escanear a rede local e manipulação de pacotes
+fastapi
